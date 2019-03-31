@@ -13,7 +13,11 @@ const url = "https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/w/api.
         return res.json();
 
     }).then(function(data) {
-        console.log(data);
+        console.log(data)
+        .catch(function(err) {
+        	console.log(err);
+        });
+        
     });
 
 
