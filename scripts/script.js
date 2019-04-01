@@ -10,16 +10,28 @@ const url = "https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/w/api.
     fetch(url  + searchData + "&limit=15")
     .then(function(res) {
         console.log("Loading Results");
+        
+        // returns JSON data
         return res.json();
+        
+        // // Returns text instead of json data
+        //return res.text();
 
     }).then(function(data) {
-        console.log(data)
-        .catch(function(err) {
-        	console.log(err);
-        });
+    	// var output = `<h2> Search results from Wikipedia </h2>`;
+    	// data.forEach(function(searchResult) {
+    		
+    	// 	output +=
+    	// 	`<div>
+    	// 	<h5> Result </h5>
+    	// 	<ul class="results">
+    	// 	<li> </liv> `;
+    	// });
+        console.log(data);
+        
         
     });
-
+}
 
 
 
@@ -33,11 +45,3 @@ const url = "https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/w/api.
 // }).then(res => res.json())
 // .then(response => console.log('Success:', JSON.stringify(response)))
 // .catch(error => console.error('Error:', error));
-	
-	
-	
-	
-	
-	
-	
-}

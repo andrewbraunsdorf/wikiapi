@@ -5,11 +5,15 @@
 
 #title {
 	color:darkgrey;
+	background-color: midnightblue;
 }
 #img {
 	width: 250px;
 	height:250px;
 }
-/*#h3 { */
-/*	color: purple;*/
-/*}*/
+h1 { 
+	color: purple;
+}
+body {
+	background-color: gold;
+}
