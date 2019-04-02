@@ -1,7 +1,9 @@
 function searchWikipedia(){
 const url = "https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/w/api.php?action=opensearch&search=";
 // const data = JSON.parse(this.response);
-
+ function submit(e){
+     e.preventdefault();
+ }
 
 	const searchData = document.getElementById('wikisearch').value;
    //var searchData = "";
@@ -9,6 +11,7 @@ const url = "https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/w/api.
     console.log(searchData);
     fetch(url  + searchData + "&limit=15")
     .then(function(res) {
+    		
         console.log("Loading Results");
         
         // returns JSON data
@@ -17,7 +20,25 @@ const url = "https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/w/api.
         // // Returns text instead of json data
         //return res.text();
 
-    }).then(function(data) {
+    })
+    
+    
+    .then(function(data) {
+        var str = 'ul';
+    	data.forEach(function(res){
+    	    
+    	    document.getElementById("myList").appendChild();
+    	   // str += '<li>' + document.write(`ID ${data[1]} was created!`) + '</li>'
+    	    str += '<li>' + data[2] + '</li>';
+    	    '<li>' + data[2] + '</li>';
+    	    '<li>' + data[3] + '</li>';
+    	});
+    	str += '</ul>';
+    	console.log(data);
+    	
+    	
+    // 	str += '<li>' + document.write(`ID ${data[1]} was created!`) + '</li>';
+    	
     	// var output = `<h2> Search results from Wikipedia </h2>`;
     	// data.forEach(function(searchResult) {
     		
@@ -27,8 +48,11 @@ const url = "https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/w/api.
     	// 	<ul class="results">
     	// 	<li> </liv> `;
     	// });
-        console.log(data);
-        
+    		//for each result
+        //console.log(data);
+        //[1,2,3].forEach(function(res) {
+        	
+        //};
         
     });
 }
